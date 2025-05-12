@@ -1,5 +1,5 @@
 //import the necessary modules
-const express = require ('express:');
+const express = require ('express');
 const path = require ('path');
 const fs = require ('fs');
 const app = express();
@@ -10,6 +10,21 @@ app.use(express.json());
 //define the port the server will run on
 const PORT = 3000;
 
+//define the path to the transactions.json file
+//use path.join to create a cross-platform compatible path
+//__dirname is a global variable that contains the path to the current directory
+const filePath = path.join(__dirname, 'transactions.json');
+
+//check if the transactions.json file exists, if not create it
+if (!fs.existsSync(filePath)) {
+    fs.writeFileSync(filePath, '[]');
+}
+
+//endpoint for all root requests
+app.get('/', (req, res) => {
+    res.send('Welcome to the Expense Tracker API');
+});
+ 
 //Endpoint to get all transactions
 app.get('/transactions', (req, res) => {
 
@@ -23,7 +38,7 @@ app.get('/transactions', (req, res) => {
     });
 });
     
-//Endpoint to get a transaction 
+//Endpoint to add a transaction 
 app.post('/transactions', (req, res) => {
 const {description, amount, date} = req.body;
 
@@ -33,8 +48,8 @@ if (!description || !amount || !date) {
 }
 
 const newTransaction = {description, amount , date};
-//read the current transactions from the JSON file
 
+//read the current transactions from the JSON file
 fs.readFile('transactions.json', 'utf-8', (err, data) => {
     if (err) {
         res.status(500).json({message: 'Error reading file.'});
