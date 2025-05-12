@@ -14,6 +14,7 @@
   "homepage": "https://github.com/AlexObwogi/finance-tracker-cli#readme",
   "description": "",
   "dependencies": {
+    "dotenv": "^16.5.0",
     "express": "^5.1.0"
   }
 }
