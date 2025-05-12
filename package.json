@@ -1,0 +1,19 @@
+{
+  "name": "finance-tracker-cli",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexObwogi/finance-tracker-cli/issues"
+  },
+  "homepage": "https://github.com/AlexObwogi/finance-tracker-cli#readme",
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
