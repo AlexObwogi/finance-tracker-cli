@@ -70,6 +70,37 @@ fs.readFile('transactions.json', 'utf-8', (err, data) => {
 });
 });
 
+//Endpoint to delete a transaction
+app.delete('transactions/:index', (req, res) => {
+    const index = parseInt(req.params.index, 10);
+
+    //read the exiting transactions from the JSON file
+    fs.readFile('transactions.json', 'utf-8', (err,data) => {
+        if (err) {
+            res.status(500).json({message: 'Error reading file.'});
+            return;
+        }
+        const transactions = JSON.parse(data);
+
+        //check if the index is valid
+        if (index < 0 || index >= transactions.length) {
+            res.status(404).json({message: 'Transaction not found.'});
+            return;
+        }
+
+        //remove the transaction from the array
+        transactions.splice(index, 1);
+
+        //write the updated transactions back to the JSON file
+        fs.writeFile('transactions.json', JSON.stringify(transactions, null, 2), (err) => {
+            if (err) {
+                res.status(500).json({message: 'Error writing file.'});
+                return;
+            }
+            res.status(200).json({message: 'Transaction deleted successfully.'});
+        });
+    });
+});
 //start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
