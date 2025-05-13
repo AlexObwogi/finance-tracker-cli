@@ -1,19 +1,19 @@
 // public/script.js
 
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("transaction-form");
+  const form = document.getElementById("transactionForm");
   const descriptionInput = document.getElementById("description");
   const amountInput = document.getElementById("amount");
   const dateInput = document.getElementById("date");
   const categoryInput = document.getElementById("category");
-  const transactionList = document.getElementById("transaction-list");
-  const categorySummary = document.getElementById("category-summary");
-  const monthForm = document.getElementById("month-form");
-  const monthlyBalance = document.getElementById("monthly-balance");
+  const transactionList = document.getElementById("transactionsList");
+  const categorySummary = document.getElementById("categorySummary");
+  const monthlyBalance = document.getElementById("monthlyBalance");
 
   // Load all data on start
   fetchTransactions();
   fetchCategorySummary();
+  fetchMonthlyBalance();
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -35,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       form.reset();
       fetchTransactions();
       fetchCategorySummary();
+      fetchMonthlyBalance();
     }
   });
 
@@ -44,8 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     transactionList.innerHTML = "";
     data.forEach((tx, index) => {
-      const li = document.createElement("li");
-      li.textContent = `${tx.date} - ${tx.description} - ${tx.amount} (${tx.category})`;
+      const div = document.createElement("div");
+      div.classList.add("transaction");
+      div.textContent = `${tx.date} - ${tx.description} - ${tx.amount} (${tx.category})`;
 
       const delBtn = document.createElement("button");
       delBtn.textContent = "Delete";
@@ -53,10 +55,11 @@ document.addEventListener("DOMContentLoaded", () => {
         await fetch(`/transactions/${index}`, { method: "DELETE" });
         fetchTransactions();
         fetchCategorySummary();
+        fetchMonthlyBalance();
       };
 
-      li.appendChild(delBtn);
-      transactionList.appendChild(li);
+      div.appendChild(delBtn);
+      transactionList.appendChild(div);
     });
   }
 
@@ -72,14 +75,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  monthForm.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const monthValue = document.getElementById("month").value;
-    const [year, month] = monthValue.split("-");
+  async function fetchMonthlyBalance() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = String(today.getMonth() + 1).padStart(2, '0');
 
     const res = await fetch(`/balance/${year}/${month}`);
+    if (!res.ok) {
+      monthlyBalance.textContent = "Error loading monthly balance.";
+      return;
+    }
     const data = await res.json();
 
-    monthlyBalance.textContent = `Month: ${data.month}, Transactions: ${data.totalTransactions}, Balance: ${data.balance}`;
-  });
+    monthlyBalance.textContent = `Month: ${data.month}, Transactions: ${data.totalTansactions}, Balance: ${data.balance}`;
+  }
 });
