@@ -101,6 +101,37 @@ app.delete('transactions/:index', (req, res) => {
         });
     });
 });
+
+//Endpoint to check monthly balance
+app.get('/balance/:year/:month', (req, res) => {
+    const {year,month} = req.params;
+
+    fs.readFile('transactions.json', 'utf-8', (err, data) => {
+        if (err) {
+            res.status(500).json({message: 'Error reading file.'});
+            return;
+        }
+        const transactions = JSON.parse(data);
+
+        //filter the transactions for the given  month and year
+        const filtered = transactions.filter (tx => {
+            const txDate = new Date(tx.date);
+            return (
+                txDate.getFullYear() === parseInt(year) &&
+                txDate.getFullMonth() === parseInt(month) - 1 // month is 0-indexed in JS
+            );
+        });
+
+        //calculate the total balance
+        const balance = filtered.reduce((sum, tx) => sum + parseFloat(tx.amount), 0);
+        res.json({
+            month: `${year}-${month}`,
+            totalTansactions: filtered.length,
+            balance
+        });
+    });
+});
+
 //start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
