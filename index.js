@@ -66,9 +66,37 @@ fs.readFile('transactions.json', 'utf-8', (err, data) => {
         }
         res.status(201).json(newTransaction);
        
+     });
     });
 });
+
+// Endpoint to get totals by category
+app.get('/report/category', (req, res) => {
+    fs.readFile('transactions.json', 'utf8', (err, data) => {
+        if (err) {
+            res.status(500).json({ message: 'Error reading file.' });
+            return;
+        }
+
+        const transactions = JSON.parse(data);
+
+        const report = {};
+
+        transactions.forEach(tx => {
+            const category = tx.category || 'Uncategorized';
+            const amount = parseFloat(tx.amount);
+
+            if (!report[category]) {
+                report[category] = 0;
+            }
+
+            report[category] += amount;
+        });
+
+        res.json(report);
+    });
 });
+
 
 //Endpoint to delete a transaction
 app.delete('transactions/:index', (req, res) => {
