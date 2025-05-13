@@ -40,14 +40,14 @@ app.get('/transactions', (req, res) => {
     
 //Endpoint to add a transaction 
 app.post('/transactions', (req, res) => {
-const {description, amount, date} = req.body;
+const {description, amount, date, category} = req.body;
 
-if (!description || !amount || !date) {
+if (!description || !amount || !date || !category) {
     res.status(400).json({message: 'Missing required fields.'});
     return;
 }
 
-const newTransaction = {description, amount , date};
+const newTransaction = {description, amount , date, category};
 
 //read the current transactions from the JSON file
 fs.readFile('transactions.json', 'utf-8', (err, data) => {
@@ -131,6 +131,7 @@ app.get('/balance/:year/:month', (req, res) => {
         });
     });
 });
+
 
 //start the server
 app.listen(PORT, () => {
