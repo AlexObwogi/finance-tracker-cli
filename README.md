@@ -1,7 +1,3 @@
-Here is a clean and **GitHub Pages–friendly** version of the `README.md`, with formatting that renders well on GitHub:
-
----
-
 # 💰 Expense Tracker
 
 A simple **Expense Tracker** built using **Node.js**, **JSON file storage**, and **vanilla JavaScript frontend**. No databases or frameworks required.
