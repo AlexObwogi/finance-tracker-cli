@@ -1,44 +1,44 @@
 [
   {
-    "description": "Coffee",
-    "amount": -5.0,
-    "date": "2025-05-01",
-    "category": "Food"
-  },
-  {
     "description": "Salary",
-    "amount": 1500.0,
+    "amount": 1500,
     "date": "2025-05-05",
     "category": "Income"
   },
   {
     "description": "Groceries",
-    "amount": -30.0,
+    "amount": -30,
     "date": "2025-05-07",
     "category": "Food"
   },
   {
     "description": "Electricity Bill",
-    "amount": -100.0,
+    "amount": -100,
     "date": "2025-05-10",
     "category": "Utilities"
   },
   {
     "description": "Dinner with Friends",
-    "amount": -45.0,
+    "amount": -45,
     "date": "2025-05-12",
     "category": "Food"
   },
   {
     "description": "Freelance Project Payment",
-    "amount": 300.0,
+    "amount": 300,
     "date": "2025-05-13",
     "category": "Income"
   },
   {
     "description": "Rent",
-    "amount": -500.0,
+    "amount": -500,
     "date": "2025-05-15",
     "category": "Housing"
+  },
+  {
+    "description": "Food",
+    "amount": 100,
+    "date": "2025-05-07",
+    "category": "Food"
   }
 ]
