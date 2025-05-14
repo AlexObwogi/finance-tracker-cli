@@ -1,0 +1,84 @@
+/* General page styling */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+/* Form and containers */
+form, .summary, .transactions {
+  background-color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Form elements */
+label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"] {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Transaction list */
+.transaction {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eef;
+  padding: 10px;
+  margin-top: 8px;
+  border-left: 5px solid #3366ff;
+  border-radius: 4px;
+}
+
+.transaction button {
+  background-color: #ff4d4d;
+  font-size: 0.9em;
+  padding: 6px 10px;
+}
+
+.transaction button:hover {
+  background-color: #e60000;
+}
+
+/* Summary and list items */
+.summary h2 {
+  margin-bottom: 10px;
+}
+
+#categorySummary li {
+  margin-bottom: 5px;
+  padding: 6px;
+  background-color: #f9f9f9;
+  border-left: 4px solid #2196F3;
+  border-radius: 4px;
+}
