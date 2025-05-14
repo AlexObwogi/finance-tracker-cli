@@ -115,6 +115,27 @@ app.get('/balance/:year/:month', (req, res) => {
   });
 });
 
+// Get yearly balance trend
+app.get('/balance/year/:year', (req, res) => {
+  const { year } = req.params;
+
+  fs.readFile(filePath, 'utf-8', (err, data) => {
+    if (err) return res.status(500).json({ message: 'Error reading file.' });
+
+    const transactions = JSON.parse(data);
+    const monthlyTotals = Array(12).fill(0);
+
+    transactions.forEach(tx => {
+      const txDate = new Date(tx.date);
+      if (txDate.getFullYear() === parseInt(year)) {
+        const monthIndex = txDate.getMonth(); // 0 = Jan
+        monthlyTotals[monthIndex] += parseFloat(tx.amount);
+      }
+    });
+
+    res.json({ year, monthlyTotals });
+  });
+});
 // Start server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
