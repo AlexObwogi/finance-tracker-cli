@@ -1,188 +1,49 @@
 [
-  {
-    "description": "Groceries",
-    "amount": "-75",
-    "date": "2025-01-05",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-01-10",
-    "category": "Income"
-  },
-  {
-    "description": "Electricity Bill",
-    "amount": "-120",
-    "date": "2025-01-15",
-    "category": "Utilities"
-  },
-  {
-    "description": "Internet",
-    "amount": "-60",
-    "date": "2025-01-20",
-    "category": "Utilities"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-40",
-    "date": "2025-01-25",
-    "category": "Food"
-  },
-  {
-    "description": "Groceries",
-    "amount": "-85",
-    "date": "2025-02-03",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-02-10",
-    "category": "Income"
-  },
-  {
-    "description": "Water Bill",
-    "amount": "-30",
-    "date": "2025-02-13",
-    "category": "Utilities"
-  },
-  {
-    "description": "Movie Night",
-    "amount": "-25",
-    "date": "2025-02-18",
-    "category": "Entertainment"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-55",
-    "date": "2025-02-22",
-    "category": "Food"
-  },
-  {
-    "description": "Groceries",
-    "amount": "-90",
-    "date": "2025-03-05",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-03-10",
-    "category": "Income"
-  },
-  {
-    "description": "Gym Membership",
-    "amount": "-50",
-    "date": "2025-03-12",
-    "category": "Health"
-  },
-  {
-    "description": "Streaming Service",
-    "amount": "-15",
-    "date": "2025-03-14",
-    "category": "Entertainment"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-60",
-    "date": "2025-03-25",
-    "category": "Food"
-  },
-  {
-    "description": "Groceries",
-    "amount": "-70",
-    "date": "2025-04-03",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-04-10",
-    "category": "Income"
-  },
-  {
-    "description": "Car Insurance",
-    "amount": "-200",
-    "date": "2025-04-12",
-    "category": "Transport"
-  },
-  {
-    "description": "Coffee",
-    "amount": "-10",
-    "date": "2025-04-18",
-    "category": "Food"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-45",
-    "date": "2025-04-26",
-    "category": "Food"
-  },
-  {
-    "description": "Groceries",
-    "amount": "-95",
-    "date": "2025-05-05",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-05-10",
-    "category": "Income"
-  },
-  {
-    "description": "Water Bill",
-    "amount": "-35",
-    "date": "2025-05-13",
-    "category": "Utilities"
-  },
-  {
-    "description": "Streaming Service",
-    "amount": "-15",
-    "date": "2025-05-15",
-    "category": "Entertainment"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-50",
-    "date": "2025-05-21",
-    "category": "Food"
-  },
-  {
-    "description": "Groceries",
-    "amount": "-88",
-    "date": "2025-06-02",
-    "category": "Food"
-  },
-  {
-    "description": "Salary",
-    "amount": "2000",
-    "date": "2025-06-10",
-    "category": "Income"
-  },
-  {
-    "description": "Gas",
-    "amount": "-45",
-    "date": "2025-06-12",
-    "category": "Transport"
-  },
-  {
-    "description": "Dining Out",
-    "amount": "-35",
-    "date": "2025-06-22",
-    "category": "Food"
-  },
-  {
-    "description": "Gift",
-    "amount": "-60",
-    "date": "2025-06-25",
-    "category": "Other"
-  },
-  {
-    "description": "Food",
-    "amount": 145678,
-    "date": "2025-06-12",
-    "category": "Food"
-  }
+  { "description": "Salary", "amount": "2000", "date": "2025-01-10", "category": "Income" },
+  { "description": "Groceries", "amount": "-80", "date": "2025-01-14", "category": "Food" },
+  { "description": "Electricity Bill", "amount": "-120", "date": "2025-01-20", "category": "Utilities" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-02-10", "category": "Income" },
+  { "description": "Internet", "amount": "-60", "date": "2025-02-11", "category": "Utilities" },
+  { "description": "Dining Out", "amount": "-55", "date": "2025-02-18", "category": "Food" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-03-10", "category": "Income" },
+  { "description": "Movie", "amount": "-25", "date": "2025-03-15", "category": "Entertainment" },
+  { "description": "Groceries", "amount": "-90", "date": "2025-03-20", "category": "Food" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-04-10", "category": "Income" },
+  { "description": "Streaming", "amount": "-15", "date": "2025-04-13", "category": "Entertainment" },
+  { "description": "Car Repair", "amount": "-200", "date": "2025-04-25", "category": "Transport" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-05-10", "category": "Income" },
+  { "description": "Coffee", "amount": "-10", "date": "2025-05-14", "category": "Food" },
+  { "description": "Water Bill", "amount": "-35", "date": "2025-05-20", "category": "Utilities" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-06-10", "category": "Income" },
+  { "description": "Gas", "amount": "-45", "date": "2025-06-15", "category": "Transport" },
+  { "description": "Dining Out", "amount": "-40", "date": "2025-06-21", "category": "Food" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-07-10", "category": "Income" },
+  { "description": "Health Insurance", "amount": "-150", "date": "2025-07-12", "category": "Health" },
+  { "description": "Streaming", "amount": "-15", "date": "2025-07-18", "category": "Entertainment" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-08-10", "category": "Income" },
+  { "description": "Vacation", "amount": "-300", "date": "2025-08-15", "category": "Entertainment" },
+  { "description": "Groceries", "amount": "-95", "date": "2025-08-22", "category": "Food" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-09-10", "category": "Income" },
+  { "description": "Gym", "amount": "-50", "date": "2025-09-13", "category": "Health" },
+  { "description": "Gas", "amount": "-40", "date": "2025-09-19", "category": "Transport" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-10-10", "category": "Income" },
+  { "description": "Halloween Costume", "amount": "-60", "date": "2025-10-28", "category": "Other" },
+  { "description": "Dining Out", "amount": "-70", "date": "2025-10-30", "category": "Food" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-11-10", "category": "Income" },
+  { "description": "Groceries", "amount": "-85", "date": "2025-11-17", "category": "Food" },
+  { "description": "Electricity Bill", "amount": "-130", "date": "2025-11-23", "category": "Utilities" },
+
+  { "description": "Salary", "amount": "2000", "date": "2025-12-10", "category": "Income" },
+  { "description": "Christmas Gifts", "amount": "-250", "date": "2025-12-22", "category": "Other" },
+  { "description": "Dining Out", "amount": "-55", "date": "2025-12-27", "category": "Food" }
 ]
