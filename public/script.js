@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fetch and display category summary
-  async function fetchCategorySummary() {
+  async function renderCategoryChart(data) {
     try {
       const res = await fetch("/report/category");
       const data = await res.json();
@@ -89,7 +89,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Fetch and display current monthly balance
-  async function fetchMonthlyBalance() {
+  async function renderTrendChart(data) {
     const today = new Date();
     const year = today.getFullYear();
     const month = String(today.getMonth() + 1).padStart(2, "0");
@@ -104,3 +104,46 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+let categoryChart, trendChart;
+
+function renderCategoryChart(data) {
+  const ctx = document.getElementById('categoryChart').getContext('2d');
+  if (categoryChart) categoryChart.destroy();
+
+  categoryChart = new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: Object.keys(data),
+      datasets: [{
+        label: 'Spending by Category',
+        data: Object.values(data),
+        backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4CAF50', '#9C27B0'],
+      }]
+    }
+  });
+}
+
+function renderTrendChart(data) {
+  const ctx = document.getElementById('trendChart').getContext('2d');
+  if (trendChart) trendChart.destroy();
+
+  const isNegative = data.balance < 0;
+  trendChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+      labels: [data.month],
+      datasets: [{
+        label: 'Monthly Balance',
+        data: [data.balance],
+        borderColor: isNegative ? '#f44336' : '#4CAF50',
+        backgroundColor: isNegative ? '#f44336aa' : '#4CAF50aa',
+        fill: true
+      }]
+    },
+    options: {
+      scales: {
+        y: { beginAtZero: true }
+      }
+    }
+  });
+}
