@@ -147,3 +147,6 @@ function renderTrendChart(data) {
     }
   });
 }
+document.getElementById("themeToggle").addEventListener("change", (e) => {
+  document.body.classList.toggle("dark", e.target.checked);
+});
