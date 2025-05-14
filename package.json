@@ -1,22 +1,25 @@
 {
-  "name": "finance-tracker-cli",
+  "name": "expense-tracker",
   "version": "1.0.0",
+  "description": "A simple full-stack Expense Tracker app using Node.js, Express, and static HTML/CSS/JS.",
   "main": "index.js",
-"scripts": {
-  "start": "node index.js",
-  "dev": "nodemon index.js"
-}
-
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/AlexObwogi/finance-tracker-cli/issues"
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
-  "homepage": "https://github.com/AlexObwogi/finance-tracker-cli#readme",
-  "description": "",
+  "keywords": [
+    "expense-tracker",
+    "nodejs",
+    "express",
+    "javascript",
+    "file-system"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
   "dependencies": {
-    "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^4.18.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
   }
 }
