@@ -1,34 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Expense Tracker</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
+  <!-- Dark Mode Toggle -->
   <div class="toggle-wrapper">
-  <label class="switch">
-    <input type="checkbox" id="themeToggle">
-    <span class="slider"></span>
-  </label>
-</div>
+    <label class="switch">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+  </div>
+
   <h1>Expense Tracker</h1>
 
   <!-- Add Transaction Form -->
   <form id="transactionForm">
     <label for="description">Description:</label>
-    <input type="text" id="description" required />
+    <input type="text" id="description" name="description" required />
 
     <label for="amount">Amount:</label>
-    <input type="number" id="amount" required />
+    <input type="number" id="amount" name="amount" required />
 
     <label for="date">Date:</label>
-    <input type="date" id="date" required />
+    <input type="date" id="date" name="date" required />
 
     <label for="category">Category:</label>
-    <input type="text" id="category" required />
+    <input type="text" id="category" name="category" required />
 
     <button type="submit">Add Transaction</button>
   </form>
@@ -41,24 +43,24 @@
     <h2>Category Summary</h2>
     <ul id="categorySummary"></ul>
     <canvas id="categoryChart" width="400" height="200"></canvas>
-    <canvas id="trendChart" width="400" height="200" style="margin-top: 30px;"></canvas>
-    <div style="margin-top: 20px; text-align: center;">
-  <label for="yearSelect">Select Year:</label>
-  <select id="yearSelect"></select>
-</div>
-<canvas id="yearlyChart" width="400" height="200" style="margin-top: 20px;"></canvas>
 
-    <canvas id="yearlyChart" width="400" height="200" style="margin-top: 30px;"></canvas>
+    <h2>Monthly Trend</h2>
+    <canvas id="trendChart" width="400" height="200" style="margin-top: 20px;"></canvas>
 
+    <div style="margin-top: 30px; text-align: center;">
+      <label for="yearSelect">Select Year:</label>
+      <select id="yearSelect"></select>
+    </div>
+
+    <h2>Yearly Balance Trend</h2>
+    <canvas id="yearlyChart" width="400" height="200" style="margin-top: 20px;"></canvas>
   </div>
-  
 
   <!-- Transactions Section -->
   <div class="transactions">
     <h2>All Transactions</h2>
     <div id="transactionsList">Loading...</div>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
   <script src="script.js"></script>
 </body>
